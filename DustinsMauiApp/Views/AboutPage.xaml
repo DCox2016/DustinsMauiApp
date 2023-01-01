@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:DustinsMauiApp.Models"
+             x:Class="DustinsMauiApp.Views.AboutPage">
+    <ContentPage.BindingContext>
+        <models:AboutPage />
+    </ContentPage.BindingContext>
+    <VerticalStackLayout Spacing="10" Margin="10">
+        <Label Text="{Binding Message}" />
+        <Image Margin="20" Source="dustinspic.jpg"
+                   SemanticProperties.Description="Dustin Cox Image"
+                   HeightRequest="120" />
+        <HorizontalStackLayout>
+            <ImageButton HeightRequest="100" WidthRequest="50" Clicked="LearnMore_Github" Source="github.png"></ImageButton>
+            <ImageButton HeightRequest="100" WidthRequest="50" Clicked="LearnMore_LinkedIn" Source="linkedin.png"></ImageButton>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Label FontSize="22" FontAttributes="Bold" Text="{Binding Title}" VerticalOptions="End" />
+            <Label FontSize="22" Text="{Binding Version}" VerticalOptions="End" />
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>
